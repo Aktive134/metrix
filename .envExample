@@ -1,0 +1,11 @@
+NODE_ENV=development
+PORT=5000
+SALT_FACTOR=example_salt_factor
+MONGO_URL=Mongo_connection_string
+MONGO_URL_SAMPLE=Mongo_connection_string
+
+JWT_ISSUER=example_issuer
+JWT_EXPIRES=1d
+JWT_ALGORITHM=example_algorithm
+JWT_SECRET=example_secret
+JWT_SUBJECT=authorization
