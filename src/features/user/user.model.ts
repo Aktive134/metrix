@@ -1,25 +1,24 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      required:  [true, 'Please provide a username']
+      required: true,
+      unique: true
     },
     email: {
       type: String,
-      required: [true, 'Please provide your email'],
+      required: true,
       unique: true,
     },
-    link: {
+    image: {
       type: String,
-      required: [true, 'Please provide a youtube link'],
-      unique: true,
     },
     password: {
       type: String,
-      required: [true, 'Please provide a password'],
-      select: false
+      required: true,
+      select: false,
     },
     isAdmin: {
       type: Boolean,
@@ -29,8 +28,9 @@ const userSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  },
-)
+  }
+);
 
-const User = mongoose.model('User', userSchema)
-export default User
+const User = mongoose.model('User', userSchema);
+
+export default User;
