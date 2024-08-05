@@ -14,4 +14,10 @@ class ApplicationError extends BaseError {
     }
 }
 
+// class ApplicationError extends BaseError {
+//     constructor(message: string) {
+//         super(Constant.errorName.serverError, Constant.statusCode.INTERNAL_SERVER_ERROR, message);
+//     }
+// }
+
 export default ApplicationError;

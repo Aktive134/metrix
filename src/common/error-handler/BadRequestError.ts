@@ -14,4 +14,10 @@ class BadRequestError extends BaseError {
     }
 }
 
+// class BadRequestError extends BaseError {
+//     constructor(message: string) {
+//         super(Constant.errorName.badRequest, Constant.statusCode.BAD_REQUEST, message);
+//     }
+// }
+
 export default BadRequestError;
