@@ -1,11 +1,9 @@
-import mongoose from 'mongoose';
-import { NextFunction } from 'express';
+import mongoose, { Document, Schema } from 'mongoose';
 
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: true,
       unique: true
     },
     email: {
@@ -15,11 +13,16 @@ const userSchema = new mongoose.Schema(
     },
     image: {
       type: String,
-      default: null
+      default: null,
     },
     password: {
       type: String,
-      required: true
+      default: null
+    },
+    googleId: {
+      type: String,
+      unique: true,
+      sparse: true,
     },
     isAdmin: {
       type: Boolean,
@@ -33,13 +36,5 @@ const userSchema = new mongoose.Schema(
 );
 
 const User = mongoose.model('User', userSchema);
-
-// userSchema.post('save', (error: Error, doc: any, next: (err?: Error) => void) => {
-//   if ((error as any).code === 11000) {
-//       next(new Error('Username already exists'));
-//   } else {
-//       next(error);
-//   }
-// });
 
 export default User;

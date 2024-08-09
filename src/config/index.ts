@@ -16,13 +16,20 @@ interface IDATABASE {
 interface PRODATABASE {
     database: string
 }
+interface OAuth {
+    client_id: string,
+    client_secret: string,
+    session_key: string,
+    callback_url: string
+}
 
 interface IConfig {
     serverPort: string
     saltFactor: number
     JWT: IJWT
     Database: IDATABASE
-    Production: PRODATABASE
+    Production: PRODATABASE,
+    OAuth: OAuth
 }
 
 
@@ -42,6 +49,12 @@ const Configuration: IConfig = {
     },
     Production: {
         database: process.env.PRODUCTION_DATABASE as string,
+    },
+    OAuth: {
+        client_id: process.env.CLIENT_ID as string,
+        client_secret: process.env.CLIENT_SECRET as string,
+        session_key: process.env.SESSION_KEY as string,
+        callback_url: process.env.REDIRECT_URL as string
     }
 }
 

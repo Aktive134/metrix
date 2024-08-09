@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express'
-import bcrypt from 'bcrypt'
 import User from './user.model'
 import Constant from '../../constant'
 import Configuration from '../../config'

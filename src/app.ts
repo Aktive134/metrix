@@ -7,13 +7,19 @@ import httpLogger from "./common/logging/http-logger";
 import errorHandler from "./middleware/error-handler";
 import router from "./routes";
 
-const app: Application = express() 
+const app: Application = express();
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+}));
+
+app.use(helmet({
+    referrerPolicy: { policy: 'no-referrer-when-downgrade' }
+}));
+
 app.use(compression());
 app.use(express.json());
-app.use(helmet());
-app.use(cors());
 app.use(httpLogger)
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "../public")));
 
