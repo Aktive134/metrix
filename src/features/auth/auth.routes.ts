@@ -1,7 +1,6 @@
 import { Router } from 'express'
 import validateUser from '../../middleware/validate-user';
 import authController from './auth.controller'
-import passport from 'passport';
 
 const {
     signuphandler,

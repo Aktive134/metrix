@@ -23,13 +23,20 @@ interface OAuth {
     callback_url: string
 }
 
+interface Cloudinary {
+    cloud_name: string,
+    cloud_api_key: string,
+    cloud_api_secret: string
+}
+
 interface IConfig {
     serverPort: string
     saltFactor: number
     JWT: IJWT
     Database: IDATABASE
     Production: PRODATABASE,
-    OAuth: OAuth
+    OAuth: OAuth,
+    cloudinary_setup: Cloudinary
 }
 
 
@@ -55,6 +62,12 @@ const Configuration: IConfig = {
         client_secret: process.env.CLIENT_SECRET as string,
         session_key: process.env.SESSION_KEY as string,
         callback_url: process.env.REDIRECT_URL as string
+    },
+    cloudinary_setup: {
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME as string,
+        cloud_api_key: process.env.CLOUDINARY_API_KEY as string,
+        cloud_api_secret: process.env.CLOUDINARY_API_SECRET as string,
+
     }
 }
 

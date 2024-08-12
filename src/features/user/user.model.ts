@@ -24,6 +24,10 @@ const userSchema = new Schema(
       unique: true,
       sparse: true,
     },
+    active: {
+      type: String,
+      default: true
+    },
     isAdmin: {
       type: Boolean,
       default: false,
