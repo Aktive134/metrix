@@ -13,7 +13,7 @@ const subscriptionLinkSchema = new mongoose.Schema(
     url: {
       type: String,
       required: true,
-      unique: true, // Ensures uniqueness of subscription links
+      unique: true,
     },
     category: {
       type: mongoose.Schema.Types.ObjectId,

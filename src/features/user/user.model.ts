@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const userSchema = new Schema(
   {
@@ -23,9 +23,10 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       sparse: true,
+      index: true
     },
     active: {
-      type: String,
+      type: Boolean,
       default: true
     },
     isAdmin: {

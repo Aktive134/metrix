@@ -9,7 +9,7 @@ const videoLinkSchema = new mongoose.Schema(
     url: {
       type: String,
       required: true,
-      unique: true, // Ensures uniqueness of video links
+      unique: true,
     },
     category: {
       type: mongoose.Schema.Types.ObjectId,
