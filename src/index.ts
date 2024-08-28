@@ -5,7 +5,8 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
 dotenv.config();
-app.listen(Configuration.serverPort , () => console.log(Constant.messages.serverUp));
+const port = process.env.PORT || 4600;
+app.listen(Configuration.serverPort , () => console.log(`App is up and running on Configured port ${port}`));
 
 mongoose.set("strictQuery", false);
 mongoose.connect(Configuration.Database.url).then(() => {
